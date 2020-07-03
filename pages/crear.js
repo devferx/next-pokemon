@@ -22,13 +22,10 @@ export default function crear() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
     Axios.post(
       'https://piedra-papel-y-tijera.firebaseio.com/pokemons.json',
       data
-    ).then((data) => {
-      Router.push('/');
-    });
+    ).then(() => Router.push('/'));
   };
 
   return (
