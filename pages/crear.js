@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import Router from 'next/router';
 import Link from 'next/link';
+import Axios from 'axios';
+
 import Wrapper from '../components/Wrapper';
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
@@ -17,6 +20,17 @@ export default function crear() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+    Axios.post(
+      'https://piedra-papel-y-tijera.firebaseio.com/pokemons.json',
+      data
+    ).then((data) => {
+      Router.push('/');
+    });
+  };
+
   return (
     <Wrapper>
       <Navbar></Navbar>
@@ -27,7 +41,7 @@ export default function crear() {
         <div className="row">
           <div className="col-md-6 col-12 mb-5">
             <h3 className="mt-3">Ingresa los datos UwU</h3>
-            <form className="form">
+            <form className="form" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label" htmlFor="nombre">
                   Nombre:
