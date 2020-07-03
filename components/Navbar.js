@@ -7,13 +7,12 @@ export default function Navbar() {
         <Link href="/">
           <a className="navbar-brand">
             <img
-              src="https://pokeapi.co/static/pokeapi_256.888baca4.png"
+              src="https://images.wikidexcdn.net/mwuploads/esssbwiki/thumb/7/77/latest/20111028181540/TituloUniversoPok%C3%A9mon.png/550px-TituloUniversoPok%C3%A9mon.png"
               height="30"
               className="d-inline-block align-center"
               alt=""
               loading="lazy"
-            />
-            {" "}
+            />{' '}
             PokeApp
           </a>
         </Link>
